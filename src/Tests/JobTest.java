@@ -55,8 +55,36 @@ public class JobTest {
         Job objectWithSecondId = new Job("Software Developer", new Employer("Booz Allen Hamilton"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
 
         assertEquals(false, objectWithFirstId.equals(objectWithSecondId));
+    }
 
+    @Test
+    public void toStringTest(){
+        Job objectTestingToString = new Job("Software Developer", new Employer("Booz Allen Hamilton"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
 
+        assertTrue(objectTestingToString.toString().startsWith("-----"));
+        assertTrue(objectTestingToString.toString().endsWith("-----"));
 
     }
+
+    @Test
+    public void secondToStringTest(){
+        Job objectTestingToString = new Job("Software Developer", new Employer("Booz Allen Hamilton"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
+
+        assertEquals(true, objectTestingToString.toString().contains("ID: " + objectTestingToString.getId()));
+        assertEquals(true, objectTestingToString.toString().contains("Name: " + objectTestingToString.getName()));
+        assertEquals(true, objectTestingToString.toString().contains("Employer: " + objectTestingToString.getEmployer()));
+        assertEquals(true, objectTestingToString.toString().contains("Location: " + objectTestingToString.getLocation()));
+        assertEquals(true, objectTestingToString.toString().contains("Position Type: " + objectTestingToString.getPositionType()));
+        assertEquals(true, objectTestingToString.toString().contains("Core Competency: " + objectTestingToString.getCoreCompetency()));
+    }
+
+
+
+//    @Test
+//    public void testForEmptyField(){
+//        Job objectTestingToString2 = new Job("Software Developer", new Employer(""), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
+//
+//        assertEquals("Data not available", objectTestingToString2.getEmployer());
+//
+//    }
 }
