@@ -9,20 +9,16 @@ public class Main {
         Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
         Job job3 = new Job("Ice cream taster", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Taste"));
 
-        Job objectTestingToString2 = new Job("Software Developer", new Employer(""), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
-
         ArrayList<Job> jobs = new ArrayList<>();
         jobs.add(job1);
         jobs.add(job2);
         jobs.add(job3);
 
-        jobs.add(objectTestingToString2);
 
         for (Job job : jobs){
             System.out.println(job);
         }
 
-        System.out.println(objectTestingToString2.getEmployer());
     }
 
 }

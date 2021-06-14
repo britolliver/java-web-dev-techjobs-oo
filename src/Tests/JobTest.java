@@ -58,7 +58,7 @@ public class JobTest {
     }
 
     @Test
-    public void toStringTest(){
+    public void toStringStartsAndEndsWithTest(){
         Job objectTestingToString = new Job("Software Developer", new Employer("Booz Allen Hamilton"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
 
         assertTrue(objectTestingToString.toString().startsWith("-----"));
@@ -67,7 +67,7 @@ public class JobTest {
     }
 
     @Test
-    public void secondToStringTest(){
+    public void testForLabelAndDataForEachField(){
         Job objectTestingToString = new Job("Software Developer", new Employer("Booz Allen Hamilton"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
 
         assertEquals(true, objectTestingToString.toString().contains("ID: " + objectTestingToString.getId()));
@@ -80,11 +80,12 @@ public class JobTest {
 
 
 
-//    @Test
-//    public void testForEmptyField(){
-//        Job objectTestingToString2 = new Job("Software Developer", new Employer(""), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
-//
-//        assertEquals("Data not available", objectTestingToString2.getEmployer());
-//
-//    }
+    @Test
+    public void testForEmptyField(){
+        Job objectTestingToString2 = new Job("Software Developer", new Employer(""), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("Angular"));
+
+        objectTestingToString2.toString();
+        assertEquals("Data not available", objectTestingToString2.getEmployer().getValue());
+
+    }
 }
